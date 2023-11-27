@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup Page</title>
+ <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="tab-group">
+        <div class="tab active" onclick="openTab('login', this)">Login</div>
+        <div style="margin-left: 10px;" class="tab" onclick="openTab('signup', this)">Signup</div>
+    </div>
+
+    <div id="login"  class="content">
+        <h2>Login</h2>
+        <form id="loginForm" action="javascript:void(0);" onsubmit="handleLogin(this)">
+            <div class="form-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="password" required>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="login">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="signup" class="content" style="display: none;">
+        <h2>Signup</h2>
+        <form id="signUpForm" action="javascript:void(0);" onsubmit="handleSignUp(this)">
+            <div class="form-group">
+                <label for="signupName">Name:</label>
+                <input type="text" id="signupName" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" name="password" required>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="signup">Signup</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+</html>

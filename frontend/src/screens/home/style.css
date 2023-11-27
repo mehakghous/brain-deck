@@ -1,0 +1,28 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#root{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.empty-con{
+    display: flex;
+    justify-items: center;
+}
