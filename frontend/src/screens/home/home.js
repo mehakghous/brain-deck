@@ -93,7 +93,6 @@ const showTopics = async (subject_id) => {
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-capitalize">${topic.topic_name}</h5>
-                        <p class="card-text ">With supporting text below as a natural lead-in to additional content.</p>
                         <button class="btn btn-primary" onclick='showDeck(${topic.topic_id})'>Show Deck</button>
                         <button class="btn btn-outline-danger" onclick='deleteTopic(${topic.topic_id},${subject_id})'>Delete</button>
                     </div>
