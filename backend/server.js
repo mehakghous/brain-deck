@@ -12,16 +12,16 @@ app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'mehak', // your MySQL username
-    password: 'mehak', // your MySQL password
-    database: 'db', // your database name
+    host: 'sql12.freemysqlhosting.net',
+    user: 'sql12665855', // your MySQL username
+    password: 'UsFXMyirbx', // your MySQL password
+    database: 'sql12665855', // your database name
 });
 
 const query = promisify(db.query).bind(db);
 
 app.get('/', (req, res) => {
-    res.send('Server is running!');
+    res.send('Server is running!!');
 })
 
 app.get('/todo', (req, res) => {
