@@ -12,10 +12,10 @@ app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: 'sql12.freemysqlhosting.net',
-    user: 'sql12665855', // your MySQL username
-    password: 'UsFXMyirbx', // your MySQL password
-    database: 'sql12665855', // your database name
+    host: 'db4free.net',
+    user: 'braindeck', // your MySQL username
+    password: 'braindeck123', // your MySQL password
+    database: 'braindeckdb', // your database name
 });
 
 const query = promisify(db.query).bind(db);
