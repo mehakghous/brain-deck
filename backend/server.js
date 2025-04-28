@@ -33,6 +33,13 @@ app.get('/todo', (req, res) => {
 app.post('/user', async (req, res) => {
     try {
         const { name, email, password } = req.body
+        const [existedUser] = await query(
+            `SELECT * FROM user WHERE email = ?`,
+            [email]
+        )
+        if (user) {
+            throw Error("User already existed!")
+        }
         const user = await query(
             `INSERT INTO user(name, email, password) VALUES(?, ?, ?)`,
             [name, email, password]
