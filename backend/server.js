@@ -37,7 +37,7 @@ app.post('/user', async (req, res) => {
             `SELECT * FROM user WHERE email = ?`,
             [email]
         )
-        if (user) {
+        if (existedUser) {
             throw Error("User already existed!")
         }
         const user = await query(
