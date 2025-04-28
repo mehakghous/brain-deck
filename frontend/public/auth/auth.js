@@ -64,6 +64,6 @@ async function handleSignUp(e) {
     localStorage.setItem("user", JSON.stringify(resbody))
     window.location.href = "../index.html";
   } catch (error) {
-    console.log("🚀 ~ file: auth.js:73 ~ handleSignUp ~ error:", error)
+    alert(error.message)
   }
 }

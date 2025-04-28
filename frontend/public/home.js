@@ -114,18 +114,18 @@ const deleteTopic = (topic_id, subject_id) => {
 
 const showDeck = (topic_id) => {
     localStorage.setItem("topicId", topic_id);
-    window.location.href = '../flashcards/flashcards.html'
+    window.location.href = './flashcards/flashcards.html'
 }
 
 const logOut = () => {
     localStorage.removeItem("user");
-    window.location.href = `../auth/auth.html`
+    window.location.href = `./auth/auth.html`
 }
 
 (() => {
     const _user = JSON.parse(localStorage.getItem("user") || `{}`)
     if (!_user.email) {
-        window.location.href = `../auth/auth.html`
+        window.location.href = `./auth/auth.html`
     } else {
         user = _user;
         getSubjects()
