@@ -33,13 +33,6 @@ app.get('/todo', (req, res) => {
 app.post('/user', async (req, res) => {
     try {
         const { name, email, password } = req.body
-        const [existedUser] = await query(
-            `SELECT * FROM user WHERE email = ?`,
-            [email]
-        )
-        if (existedUser) {
-            throw Error("User already existed!")
-        }
         const user = await query(
             `INSERT INTO user(name, email, password) VALUES(?, ?, ?)`,
             [name, email, password]
@@ -66,13 +59,20 @@ app.post('/api/login', async (req, res) => {
         }
         res.send(user);
     } catch (error) {
-        res.status(400).send(error.message)
+        res.status(400).send({ message: error.message })
     }
 })
 
 app.post('/api/signup', async (req, res) => {
     try {
         const { name, email, password } = req.body
+        const [existedUser] = await query(
+            `SELECT * FROM user WHERE email = ?`,
+            [email]
+        )
+        if (existedUser) {
+            throw Error("User already existed!")
+        }
         const user = await query(
             `INSERT INTO user(name, email, password) VALUES(?, ?, ?)`,
             [name, email, password]
@@ -83,7 +83,7 @@ app.post('/api/signup', async (req, res) => {
         );
         res.send(insertedUser);
     } catch (error) {
-        res.status(400).send(error.message)
+        res.status(400).send({ message: error.message })
     }
 })
 

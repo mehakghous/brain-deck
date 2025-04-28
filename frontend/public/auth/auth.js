@@ -40,11 +40,11 @@ async function handleLogin(e) {
       },
     })
     const resbody = await response.json()
+    if(!response.ok) throw new Error(resbody.message)
     localStorage.setItem("user", JSON.stringify(resbody))
     window.location.href = '../index.html';
   } catch (error) {
-    alert("Wrong email password!")
-    console.log("🚀 ~ file: auth.js:49 ~ handleLogin ~ error:", error)
+    alert(error.message)
   }
 
 }
@@ -61,6 +61,7 @@ async function handleSignUp(e) {
       }
     });
     const resbody = await response.json();
+    if(!response.ok) throw new Error(resbody.message)
     localStorage.setItem("user", JSON.stringify(resbody))
     window.location.href = "../index.html";
   } catch (error) {
