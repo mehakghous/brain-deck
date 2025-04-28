@@ -32,7 +32,7 @@ async function handleLogin(e) {
   try {
     const formData = new FormData(e);
     const formProps = Object.fromEntries(formData);
-    const response = await fetch("https://tiny-puce-gopher-sock.cyclic.app/api/login", {
+    const response = await fetch("https://convenient-margret-mehakghous-8713c5cc.koyeb.app/api/login", {
       method: "POST",
       body: JSON.stringify(formProps),
       headers: {
@@ -53,7 +53,7 @@ async function handleSignUp(e) {
   try {
     const formData = new FormData(e);
     const formProps = Object.fromEntries(formData);
-    const response = await fetch("https://tiny-puce-gopher-sock.cyclic.app/api/signup", {
+    const response = await fetch("https://convenient-margret-mehakghous-8713c5cc.koyeb.app/api/signup", {
       method: "POST",
       body: JSON.stringify(formProps),
       headers: {

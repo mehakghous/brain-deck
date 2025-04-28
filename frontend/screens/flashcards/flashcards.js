@@ -1,6 +1,6 @@
 const fetcher = async ({ endpoint, body, method, query }) => {
     try {
-        const res = await fetch(`https://tiny-puce-gopher-sock.cyclic.app${endpoint}${query ? `?${Object.entries(query).map(([key, value]) => `${key}=${value}&`)}` : ""}`, {
+        const res = await fetch(`https://convenient-margret-mehakghous-8713c5cc.koyeb.app${endpoint}${query ? `?${Object.entries(query).map(([key, value]) => `${key}=${value}&`)}` : ""}`, {
             body: body ? JSON.stringify(body) : undefined,
             method,
             headers: {
